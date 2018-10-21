@@ -9,6 +9,10 @@
 </head>
 <body>
 
+  <div id="app">
+
+  </div>
+
   <div class="container">
     <div class="row text-center">
       <div class="f1">
@@ -20,8 +24,23 @@
         <button id="create-item">Create Item</button>
       </div>
     </div>
+
+    <div class="row text-center">
+      <div class="f1">
+        <button class="tab-btn" id="show-create-user">Create User</button>
+      </div>
+      <div class="f1">
+        <button class="tab-btn" id="show-login">Log In</button>
+      </div>
+    </div>
+
     <div class="row">
       <div class="f1">
+
+        <form id="login">
+          <h1>login</h1>
+        </form>
+
         <form id="create-user">
           <fieldset>
             <legend>
@@ -48,23 +67,62 @@
     </div>
   </div>
   
-  <script src="../static/script.js"></script>
+  <script src="../static/vendor/vue.js"></script>
+  <script src="../static/my-requests.js"></script>
+  <script src="../static/event-bus.js"></script>
+  <script src="../static/vue-components.js"></script>
+  <script src="../static/main.js"></script>
   <script>
-  
-  const request = new RequestMaker()
 
-  const getItems = document.querySelector('#get-items');
-  const createItem = document.querySelector('#create-item');
+  const eventBus = new Vue({
+    data: {
 
-  const createUserForm = elem('create-user');
-  const passwordInput = elem('password');
-  const usernameInput = elem('username');
+    },
+    methods: {
+
+    }
+  })
+
+  const createUser = {
+    data: function() {
+      return {
+
+      };
+    },
+    methods: {
+
+    },
+    template: //html
+    `
+    <div>
+      <h1>Create User</h1>
+    </div>
+    `
+  }
+
+
+ 
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+
+    },
+    methods: {
+
+    },
+    mounted: function() {
+
+    }
+  });
+
+
 
   createUserForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const user = {
-      username: usernameInput.value,
-      password: passwordInput.value,
+      username: createUsername.value,
+      password: createPassword.value,
     }
     request.post('/user', user)
       .then(response => {

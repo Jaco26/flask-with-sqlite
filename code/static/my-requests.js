@@ -42,7 +42,4 @@ class RequestMaker {
   }
 }
 
-
-function elem(id) {
-  return document.getElementById(id);
-}
+const req = new RequestMaker();

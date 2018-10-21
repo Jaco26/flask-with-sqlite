@@ -43,3 +43,18 @@ html, body {
 .underline {
   text-decoration: underline;
 }
+
+.tab-btn {
+  position: relative;
+  font-size: 24px;
+  border: solid lightblue 1px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #dedede;
+
+}
+
+.tab-btn:hover {
+  background-color: #cdcdcd;
+  border: solid rgb(115, 189, 214) 1px;
+}
