@@ -2,4 +2,5 @@
 /instance/
 .vscode/
 code/__pycache__
+code/instance/
 data.db

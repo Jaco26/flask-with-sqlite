@@ -3,6 +3,7 @@ from flask_restful import Resource, Api, reqparse
 from flask_jwt import JWT, jwt_required
 
 from security import authenticate, identity
+from user import UserRegister
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_pyfile('config.py')
@@ -80,6 +81,7 @@ class ItemList(Resource):
 
 api.add_resource(Item, '/item/<string:name>') # make the Item resource accessible from the api at the route provided as the second argument
 api.add_resource(ItemList, '/items')
+api.add_resource(UserRegister, '/register')
 
 @app.route('/')
 def index():
