@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get Your Items Here!</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="f1">
+        Hello
+      </div>
+      <div class="f1">
+        How are you
+        <button id="get-items">Get Items</button>
+        <button id="create-item">Create Item</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="f1">
+        <form id="create-user">
+          <fieldset>
+            <legend>
+              <h3>Create a User</h3>
+            </legend>
+            <section class="row">
+              <div class="f1">
+                <label for="username">Username: <abbr title="required">*</abbr> </label>
+                <input type="text" name="username" id="username">
+              </div>
+              <div class="f1">
+                <label for="password">Password: <abbr title="required">*</abbr> </label>
+                <input type="password" name="password" id="password">
+              </div>
+            </section>
+            <section class="row">
+              <div class="f1 text-right">
+                <button type="submit">Submit</button>
+              </div>
+            </section>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../static/script.js"></script>
+  <script>
+  
+  const request = new RequestMaker()
+
+  const getItems = document.querySelector('#get-items');
+  const createItem = document.querySelector('#create-item');
+
+  const createUserForm = elem('create-user');
+  const passwordInput = elem('password');
+  const usernameInput = elem('username');
+
+  createUserForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = {
+      username: usernameInput.value,
+      password: passwordInput.value,
+    }
+    request.post('/user', user)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    
+  });
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/venv/
+/instance/
+.vscode/
+code/__pycache__
+data.db
