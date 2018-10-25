@@ -1,5 +1,5 @@
 html, body {
-  margin: 0;
+  margin: 0px;
   height: 100%;
   overflow: hidden;
   font-family: 'Courier New', Courier, monospace;
@@ -32,6 +32,12 @@ html, body {
   padding: 5px;
 }
 
+.f3 {
+  flex: 3;
+  margin: 5px;
+  padding: 5px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -44,6 +50,26 @@ html, body {
   text-decoration: underline;
 }
 
+.dark-blue {
+  background-color: #112F41;
+}
+
+.middle-blue {
+  background-color: #068587;
+}
+
+.light-blue {
+  background-color: #4FB99F;
+}
+
+.yellow {
+  background-color: #F2B134;
+}
+
+.orange {
+  background-color: #ED553B;
+}
+
 .tab-btn {
   position: relative;
   font-size: 24px;
@@ -51,10 +77,11 @@ html, body {
   cursor: pointer;
   padding: 5px;
   background-color: #dedede;
-
+  min-width: 120px;
 }
 
 .tab-btn:hover {
   background-color: #cdcdcd;
   border: solid rgb(115, 189, 214) 1px;
 }
+
